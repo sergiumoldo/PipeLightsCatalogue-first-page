@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+</head>
+
+
+<body>
+    <!--first page-->
+
+    <div class="firstpage">
+        <div class="waviy">
+            <span style="--i:1">P</span>
+            <span style="--i:2">i</span>
+            <span style="--i:3">p</span>
+            <span style="--i:4">e</span>
+            <span style="--i:5">L</span>
+            <span style="--i:6">i</span>
+            <span style="--i:7">g</span>
+            <span style="--i:8">h</span>
+            <span style="--i:9">t</span>
+            <span style="--i:10">s</span>
+        </div>
+
+        <div class="catalog">
+            <p class="catalogtext">Catalog produse</p>
+        </div>
+
+        <div class="buttonabsolute">
+            <div class="buttoncontainer">
+                <div class="line"></div>
+
+            </div>
+        </div>
+
+        <img id="logoimg" style="position: absolute; height: 80px; bottom: 100px; left: 100px;" src="pictures/sigla noua.png" />
+
+        <div class="icondiv">
+            <a href="https://www.instagram.com/pipelights.byserox/" target="_blank"><i class="i1 icons fa-lg bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/PipeLightsbySerox/" target="_blank"><i class="i2 icons fa-lg bi bi-facebook"></i></a>
+            <i class="i3 icons fa-lg bi bi-whatsapp"></i>
+            <a href="https://pipelights.ro/" target="_blank">
+                <i class="i4 icons fa-lg bi bi-globe"></i>
+
+            </a>
+        </div>
+
+        <div class="menudiv">
+            <div style="background-color: #A7BC5B" class="menu m1">
+                From The Earth
+                <div class="menubutton1"> </div>
+                <div class="menulink menulink1"> </div>
+            </div>
+
+            <div style="background-color: #F1B814" class="menu m2">
+                Orion
+                <div class="menubutton2"> </div>
+                <div class="menulink menulink2"> </div>
+            </div>
+
+            <div style="background-color: #5EBEC4" class="menu m3">
+                Copper
+                <div class="menubutton3"> </div>
+                <div class="menulink menulink3"> </div>
+            </div>
+        </div>
+    </div>
+
+    <!--fromtheearth page-->
+
+    <div class="fromTheEarth">
+        <div class="overlay"></div>
+        <div class="backbutton">
+            <i onclick="PageBack()" class="fa-6x bi bi-backspace-fill"></i>
+        </div>
+        <img id="logoimg" style="position: absolute; height: 80px; bottom: 100px; left: 100px; z-index: 20;" src="pictures/sigla noua.png" />
+
+
+        earth
+    </div>
+
+    <!--orion page-->
+
+    <div class="orionpage">
+        <div class="overlay"></div>
+        <div class="backbutton">
+            <i onclick="PageBack()" class="fa-6x bi bi-backspace-fill"></i>
+        </div>
+        <img id="logoimg" style="position: absolute; height: 80px; bottom: 100px; left: 100px; z-index: 20;" src="pictures/sigla noua.png" />
+
+        Orionpage
+    </div>
+
+    <!--copper page-->
+
+    <div class="copper">
+        <div class="overlay"></div>
+        <div class="backbutton">
+            <i onclick="PageBack()" class="fa-6x bi bi-backspace-fill"></i>
+        </div>
+        <img id="logoimg" style="position: absolute; height: 80px; bottom: 100px; left: 100px; z-index: 20;" src="pictures/sigla noua.png" />
+
+        copper
+
+
+
+    </div>
+
+
+    <div class="curtainLeft"></div>
+    <div class="curtainRight"></div>
+
+    <div class="curtainLeft1 curtainLeft"></div>
+    <div class="curtainRight1 curtainRight"></div>
+
+
+    <!--end of first page-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+             $('.waviy').hide(0).delay(1500).fadeIn(2000);
+            $('.catalog').hide(0).delay(1500).slideDown(2000);
+            $('.icondiv').hide(0).delay(2000).fadeIn(2000);
+
+            $('.buttoncontainer').hide(0).delay(3000).slideDown(500);
+
+        });
+
+
+
+
+        /*hamburgermenu button functionality*/
+
+        let buttonOpen = true;
+        let button = $(".buttoncontainer");
+
+
+        button.on("click", function () {
+
+            if (buttonOpen) {
+                button.addClass("open");
+                $(".menudiv").addClass("menudivshow");
+                buttonOpen = false;
+            }
+            else {
+                button.removeClass("open");
+                $(".menudiv").removeClass("menudivshow");
+                buttonOpen = true;
+
+            }
+        });
+
+        /*menu buttons logic */
+
+        let menuButton1 = true;
+
+        $(".menubutton1").on("click", function () {
+
+            if (menuButton1) {
+                $(".m1").removeClass("menubuttonnotshow");
+                $(".m1").addClass("menubuttonshow");
+
+                menuButton1 = false;
+            }
+            else {
+                $(".m1").removeClass("menubuttonshow");
+                $(".m1").addClass("menubuttonnotshow");
+
+                menuButton1 = true;
+            }
+        });
+
+        let menuButton2 = true;
+
+        $(".menubutton2").on("click", function () {
+
+            if (menuButton2) {
+                $(".m2").removeClass("menubuttonnotshow");
+                $(".m2").addClass("menubuttonshow");
+
+                menuButton2 = false;
+            }
+            else {
+                $(".m2").removeClass("menubuttonshow");
+                $(".m2").addClass("menubuttonnotshow");
+
+                menuButton2 = true;
+            }
+        });
+
+        let menuButton3 = true;
+
+        $(".menubutton3").on("click", function () {
+
+            if (menuButton3) {
+                $(".m3").removeClass("menubuttonnotshow");
+                $(".m3").addClass("menubuttonshow");
+
+                menuButton3 = false;
+            }
+            else {
+                $(".m3").removeClass("menubuttonshow");
+                $(".m3").addClass("menubuttonnotshow");
+
+                menuButton3 = true;
+            }
+        });
+
+        //homepage curtains logic
+
+        let menuLink1 = true;
+
+        $(".menulink1").on("click", function () {
+
+            if (menuLink2) {
+                $(".curtainLeft").addClass("curtainLeftShow");
+                $(".curtainRight").addClass("curtainRightShow");
+
+                function ChangePage() {
+
+
+                    setTimeout(function () {
+                        (".menudiv").addClass("pagehidden");
+                    }, 2500);
+                    setTimeout(function () {
+                        $(".firstpage").addClass("pagehidden");
+                    }, 2500);
+
+                    setTimeout(function () {
+                        $(".fromTheEarth").addClass("pageshow");
+                    }, 2500);
+
+                }
+                setTimeout(ChangePage());
+
+                menuLink1 = false;
+            }
+            else {
+                $(".curtainLeft").removeClass("curtainLeftShow");
+                $(".curtainRight").removeClass("curtainRightShow");
+
+                menuLink1 = true;
+            }
+        });
+
+
+        let menuLink2 = true;
+
+        $(".menulink2").on("click", function () {
+
+            if (menuLink2) {
+                $(".curtainLeft").addClass("curtainLeftShow");
+                $(".curtainRight").addClass("curtainRightShow");
+
+                function ChangePage() {
+
+
+                    setTimeout(function () {
+                        $(".menudiv").addClass("pagehidden");
+                    }, 2500);
+                    setTimeout(function () {
+                        $(".firstpage").addClass("pagehidden");
+                    }, 2500);
+
+                    setTimeout(function () {
+                        $(".orionpage").addClass("pageshow");
+                    }, 2500);
+
+                }
+                setTimeout(ChangePage());
+
+                menuLink2 = false;
+            }
+            else {
+                $(".curtainLeft").removeClass("curtainLeftShow");
+                $(".curtainRight").removeClass("curtainRightShow");
+
+                menuLink2 = true;
+            }
+        });
+
+
+        let menuLink3 = true;
+
+        $(".menulink3").on("click", function () {
+
+            if (menuLink3) {
+                $(".curtainLeft").addClass("curtainLeftShow");
+                $(".curtainRight").addClass("curtainRightShow");
+
+                function ChangePage() {
+
+
+                    setTimeout(function () {
+                        (".menudiv").addClass("pagehidden");
+                    }, 2500);
+                    setTimeout(function () {
+                        $(".firstpage").addClass("pagehidden");
+                    }, 2500);
+
+                    setTimeout(function () {
+                        $(".copper").addClass("pageshow");
+                    }, 2500);
+
+                }
+                setTimeout(ChangePage());
+
+                menuLink3 = false;
+            }
+            else {
+                $(".curtainLeft").removeClass("curtainLeftShow");
+                $(".curtainRight").removeClass("curtainRightShow");
+
+                menuLink3 = true;
+            }
+        });
+
+       
+        
+    </script>
+</body>
+</html>
